@@ -1,0 +1,23 @@
+{% extends 'core/index.html'%}
+
+{% block conteudo %}
+
+<html>
+<head>
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Postagens do Blog 1</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <p>Publicado por {{ post.author }} em {{ post.date_posted }}</p>
+        </div>
+    {% endfor %}
+</body>
+
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'core/index.html'%}
+
+{% block conteudo %}
+
+<html>
+<head>
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .post-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .post-content {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .post-footer {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-content">{{ post.content }}</div>
+        <div class="post-footer">
+        <img class="d-block w-100" src="{{ post.image.url }}" alt="{{ post.title }}">
+            Publicado por {{ post.author }} em {{ post.date_posted|date:"F j, Y, g:i a" }}
+        </div>
+        <a href="{% url 'aulas' %}" class="btn btn-secondary">Voltar para a lista de postagens</a>
+    </div>
+</body>
+</html>
+
+{% endblock %}

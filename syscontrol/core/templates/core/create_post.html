@@ -1,0 +1,17 @@
+{% extends 'core/index.html'%}
+
+{% block conteudo %}<html>
+<head>
+    <title>Criar nova postagem</title>
+</head>
+<body>
+    <h1>Criar nova postagem</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'post_list' %}">Voltar para a lista de postagens</a>
+</body>
+</html>
+{% endblock %}
